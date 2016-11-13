@@ -30,3 +30,12 @@ echo "Run the following command on all the node which you need to configure it a
 cat minion.sh
 sleep 5
 EOF
+
+
+mkdir -p /local_packages
+
+cd /local_packages
+
+  sudo apt-get --print-uris --yes -d --reinstall install apache2 mysql-server php-mysql php libapache2-mod-php php-mcrypt php-cli $(apt-cache depends apache2 mysql-server php-mysql php libapache2-mod-php php-mcrypt php-cli | grep "  Depends:" |  sed 's/  Depends://' | sed ':a;N;$!ba;s/\n//g') | grep ^\' | cut -d\' -f2 >downloads.list
+
+wget --input-file downloads.list
