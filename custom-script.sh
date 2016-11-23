@@ -32,7 +32,7 @@ cat minion.sh
 sleep 5
 EOF
 
-apt-get install -y emacs git tree bzip2 ntp telnet telnet-server tcptraceroute traceroute nmap
+apt-get install -y emacs git tree bzip2 ntp telnet inetutils-traceroute nmap
 
 mkdir -p /local_packages
 
