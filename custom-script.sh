@@ -34,6 +34,10 @@ EOF
 
 apt-get install -y emacs git tree bzip2 ntp telnet inetutils-traceroute nmap
 
+curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/bin/docker-compose
+
+chmod +x /usr/bin/docker-compose
+
 mkdir -p /local_packages
 
 cd /local_packages
